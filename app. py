@@ -1,0 +1,12 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Welcome to SmartFin: AI-Powered Personal Finance Assistant!"
+
+# Add more routes to call the specific scripts and return results
+
+if __name__ == '__main__':
+    app.run(debug=True)
