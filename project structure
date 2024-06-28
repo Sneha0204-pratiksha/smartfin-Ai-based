@@ -1,0 +1,18 @@
+SmartFin-Personal-Finance-Assistant/
+├── data/
+│   ├── transactions.csv
+│   ├── budget.csv
+│   └── savings.csv
+├── notebooks/
+│   ├── expense_prediction.ipynb
+│   ├── budget_recommendation.ipynb
+│   ├── savings_optimization.ipynb
+│   └── anomaly_detection.ipynb
+├── scripts/
+│   ├── expense_prediction.py
+│   ├── budget_recommendation.py
+│   ├── savings_optimization.py
+│   └── anomaly_detection.py
+├── requirements.txt
+├── README.md
+└── app.py
