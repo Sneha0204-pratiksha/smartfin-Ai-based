@@ -1,0 +1,22 @@
+import pandas as pd
+from statsmodels.tsa.arima_model import ARIMA
+import matplotlib.pyplot as plt
+
+# Load data
+data = pd.read_csv('data/transactions.csv', parse_dates=['date'], index_col='date')
+
+# Aggregate data monthly
+monthly_data = data['amount'].resample('M').sum()
+
+# Fit ARIMA model
+model = ARIMA(monthly_data, order=(5,1,0))
+model_fit = model.fit(disp=0)
+
+# Make predictions
+forecast = model_fit.forecast(steps=12)[0]
+
+# Plot results
+plt.plot(monthly_data, label='Actual')
+plt.plot(pd.date_range(start=monthly_data.index[-1], periods=13, freq='M')[1:], forecast, label='Forecast')
+plt.legend()
+plt.show()
